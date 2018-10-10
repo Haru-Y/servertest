@@ -14,15 +14,16 @@ public class NfcServlet extends HttpServlet {
         resp.setContentType("text/html;charset=utf-8");
  
         PrintWriter pw = resp.getWriter();
-        String a = "1"; 
-		String b = "2";
-	
+        String a = "admin"; 
+		String b = "qwe";
+	boolean retVal1,retVal2;
         
         
         String param_a = req.getParameter("a");
         String param_b = req.getParameter("b");
-        
-        if (a == param_a && b == param_b)						
+        retVal1 = a.equals(param_a);
+		retVal2 = b.equals(param_b);
+        if (retVal1 == true && retVal2==true)						
 				pw.println("It's working!");			
 		else		
 			pw.println("error");
